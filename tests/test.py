@@ -15,17 +15,42 @@ class TestCapitals(unittest.TestCase):
         self.valid_state = 'Italy'
         self.invalid_state = 'Cambogia'
 
+    '''
+    This function check if there exists the CSV file
+
+    '''
+
     def test_check_path(self):
         self.assertFalse(os.path.exists("data/invented_file.csv"))
+
+    '''
+    This function checks if the function works whenever I use a correct input for capital.
+
+    '''
 
     def test_capital_valid(self):
         self.assertEqual('Italy', get_capital(self.valid_capital))
 
+    '''
+    This function checks if the function works whenever I use an incorrect input for capital.
+
+    '''
+
     def test_capital_invalid(self):
         self.assertEqual('', get_capital(self.invalid_capital))
 
+    '''
+    This function checks if the function works whenever I use a correct input for State.
+
+    '''
+
     def test_state_valid(self):
         self.assertEqual('Rome', get_state(self.valid_state))
+
+    '''
+    This function checks if the function works whenever I use an incorrect input for State.
+
+    '''
 
     def test_state_invalid(self):
         self.assertEqual('', get_state(self.invalid_state))
