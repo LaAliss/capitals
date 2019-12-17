@@ -22,7 +22,7 @@ def check_for_username(username, password):
     global conn
     global cursor
     
-    conn = sqlite3.connect('/home/seed/capitals.6/scripts/ourdatabase.db')
+    conn = sqlite3.connect('scripts/ourdatabase.db')
     cursor = conn.cursor()
     salt = cursor.execute("SELECT salt FROM user WHERE username=?", (username,)).fetchall()
 

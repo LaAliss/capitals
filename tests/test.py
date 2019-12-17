@@ -2,8 +2,7 @@ import unittest
 import sys
 from CapitalsFolder.capitals import get_capital
 from CapitalsFolder.capitals import get_state
-from CSVfolder.csvcode import get_state_from_capital
-from CSVfolder.csvcode import get_capital_from_state
+from CSVfolder.csvcode import get_capital_or_state
 import os
 
 
@@ -61,21 +60,13 @@ class TestCapitals(unittest.TestCase):
 
 class TestCsv(unittest.TestCase):
 
-    def test_capital_from_state_valid(self):
+    def test_capital_or_state_valid(self):
         state = 'Italy'
-        self.assertEqual('Rome', get_capital_from_state(state))
+        self.assertEqual('Rome', get_capital_or_state(state))
 
-    def test_capital_from_state_invalid(self):
+    def test_capital_or_state_invalid(self):
         state = 'Cambogia'
-        self.assertEqual(None, get_capital_from_state(state))
-
-    def test_state_from_capital_valid(self):
-        capital = 'Rome'
-        self.assertEqual('Italy', get_state_from_capital(capital))
-
-    def test_state_from_capital_invalid(self):
-        capital = 'Napoli'
-        self.assertEqual(None, get_state_from_capital(capital))
+        self.assertEqual(None, get_capital_or_state(state))
 
 
 if __name__ == '__main__':

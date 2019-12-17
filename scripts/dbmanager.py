@@ -62,11 +62,4 @@ def save_new_username(username, password):
     print('{} has been correctly inserted in ourdatabase'.format(username))
 
 
-check_or_create()
-args = parse_args()
-
-
-if args.a and args.p:
-    save_new_username(args.a, args.p)
-
-conn.close()
+ 
