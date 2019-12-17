@@ -68,23 +68,28 @@ The below functions check the given input
 return the State or the Capital.
 They also allow to add different degrees of
 verbosity depending on how much we want the
-output to be deepened 
+output to be deepened
 
 '''
+
 
 def check_capital(args):
     state = get_capital(args.name)
     if state:
         if args.verbosity >= 2:
             print('entrato')
-            print(" We are checking your input in order to understand if it is contained in the list of capitals,The capital of {} is {}".format(state, args.name))
+            print(" We are checking your input in order to",
+                  "understand if it is contained in the list of capitals, ",
+                  "The capital of {} is {}".format(state, args.name))
         elif args.verbosity >= 1:
             print("The capital of {} is {}".format(state, args.name))
         else:
-            print(state) 
+            print(state)
     else:
-        print("Sorry, {} is not the capital of any European state".format(args.name))
-       
+        print("Sorry, {} is not the capital of any",
+              " European state".format(args.name))
+
+
 def get_capital(name):
     state = ''
     for country, capital in list_of_capitals.items():
@@ -97,14 +102,18 @@ def check_state(args):
     capital = get_state(args.name)
     if capital:
         if args.verbosity >= 2:
-           print(" We are checking your input in order to understand if it is contained in the list of capitals,The European state whose capital is {} is {}".format(capital, state))
+            print(" We are checking your input in order to ",
+                  "understand if it is contained in the list ",
+                  "of capitals,The European state whose capital",
+                  " is {} is {}".format(capital, state))
         elif args.verbosity >= 1:
-            print("The European state whose capital is {} is {}".format(capital, args.name))
+            print("The European state whose capital ",
+                  "is {} is {}".format(capital, args.name))
         else:
             print(capital)
     else:
         print("Sorry, {} is not a European state".format(capital))
-            
+
 
 def get_state(name):
     cap = ''
@@ -112,5 +121,3 @@ def get_state(name):
         if state == name:
             cap = capital
     return cap
-
-
