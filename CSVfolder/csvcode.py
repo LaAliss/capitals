@@ -7,7 +7,7 @@ input basis, it will return the Capital or the State'''
 
 def get_capital_or_state(name):
     with open('CSVfolder/capitals.csv', 'r') as f:
-        csv_reader = csv.reader(f, delimiter = ',')
+        csv_reader = csv.reader(f, delimiter=',')
         for row in csv_reader:
             if row[1] == name:
                 return row[0]
