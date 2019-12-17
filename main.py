@@ -1,8 +1,3 @@
-#! /usr/bin/env python3\
-
-
-'''from CapitalsFolder import capitals'''
-
 import argparse
 import csv
 import sqlite3
@@ -17,6 +12,10 @@ conn = None
 cursor = None
 database = 'scripts/ourdatabase.db'
 
+'''
+This function check the username in order to control if it is in the database
+
+'''
 
 def check_for_username(username, password):
 
@@ -66,6 +65,10 @@ def parse_arguments():
 
 args = parse_arguments()
 
+'''
+This function allow to run the entire program, first checking username and password and then running the function that looks for the country or capital name.
+
+'''
 
 if __name__ == '__main__':
     args = parse_arguments()
