@@ -3,6 +3,12 @@ import hashlib
 import argparse
 import random
 
+''' 
+The function named check_or_create will check if an already existing table 
+exists. If not a new table called user will be created.
+The table will have three columns called username, hasha and salt
+'''
+
 
 def check_or_create():
 
@@ -19,6 +25,12 @@ def check_or_create():
                        salt CHAR(256), 
                        PRIMARY KEY (hasha))''')
 
+
+'''
+Here we are adding two more optional arguments -a, -p that will
+be used to add a new user to the table.
+'''
+
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('-a', help="add a usernamename",
@@ -27,6 +39,10 @@ def parse_args():
                         required=True)
     return parser.parse_args()
 
+
+''' 
+This function will add a new user to our database
+'''
 
 def save_new_username(username, password):
     global conn
