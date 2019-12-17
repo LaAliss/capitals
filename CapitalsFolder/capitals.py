@@ -1,5 +1,8 @@
-'''Here we have a dictionary in which there is a list.
-In this list, each line is composed by a state(key) and his capital(value)'''
+'''
+Here we have a dictionary in which there is a list.
+In this list, each line is composed by a state(key) and his capital(value)
+
+'''
 
 list_of_capitals = {'Aland Islands': 'Mariehamn',
                     'Albania': 'Tirana',
@@ -81,7 +84,7 @@ def check_capital(args):
             print(state) 
     else:
         print("Sorry, {} is not the capital of any European state".format(args.name))
-        
+       
 def get_capital(name):
     state = ''
     for country, capital in list_of_capitals.items():
